@@ -1,0 +1,395 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nischal Shrestha</title>
+<meta name="description" content="Nischal Shrestha — Computer Science student at Lakehead University and undergraduate AI researcher working on hyperspectral image analysis.">
+<meta property="og:title" content="Nischal Shrestha">
+<meta property="og:description" content="Computer Science @ Lakehead University · Undergraduate AI Researcher">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%230f766e'/><text x='50%' y='54%' text-anchor='middle' dominant-baseline='middle' font-family='Georgia,serif' font-size='34' fill='white'>N</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #fafaf7;
+  --surface: #ffffff;
+  --text: #1c1f1e;
+  --muted: #5d6663;
+  --line: #e4e6e1;
+  --accent: #0f766e;
+  --accent-soft: #e3f1ef;
+  --shadow: 0 1px 2px rgba(0,0,0,.04), 0 4px 16px rgba(0,0,0,.04);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #111413; --surface: #181c1b; --text: #e8ebe9; --muted: #9aa5a1;
+    --line: #2a302e; --accent: #5eead4; --accent-soft: #15302c; --shadow: none;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #111413; --surface: #181c1b; --text: #e8ebe9; --muted: #9aa5a1;
+  --line: #2a302e; --accent: #5eead4; --accent-soft: #15302c; --shadow: none;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; scroll-padding-top: 72px; }
+body {
+  background: var(--bg); color: var(--text);
+  font: 400 16px/1.65 Inter, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; text-underline-offset: 3px; }
+.wrap { max-width: 880px; margin: 0 auto; padding: 0 24px; }
+@media (max-width: 560px) { .wrap { padding: 0 16px; } }
+
+/* Nav */
+nav {
+  position: sticky; top: 0; z-index: 10;
+  background: color-mix(in srgb, var(--bg) 88%, transparent);
+  backdrop-filter: blur(10px); border-bottom: 1px solid var(--line);
+}
+nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 60px; gap: 16px; }
+.brand { font: 600 18px Fraunces, Georgia, serif; color: var(--text); }
+.brand:hover { text-decoration: none; }
+.nav-links { display: flex; gap: 22px; align-items: center; font-size: 14px; }
+.nav-links a { color: var(--muted); }
+.nav-links a:hover { color: var(--text); text-decoration: none; }
+.theme-btn {
+  background: none; border: 1px solid var(--line); border-radius: 8px;
+  width: 34px; height: 34px; cursor: pointer; color: var(--muted);
+  display: grid; place-items: center;
+}
+.theme-btn:hover { color: var(--text); }
+@media (max-width: 640px) { .nav-links a.hide-sm { display: none; } .nav-links { gap: 14px; } }
+
+/* Hero */
+.hero { padding: 88px 0 64px; }
+.eyebrow { font: 500 13px 'JetBrains Mono', monospace; color: var(--accent); letter-spacing: .02em; margin-bottom: 18px; }
+h1 {
+  font: 600 clamp(40px, 7vw, 64px)/1.05 Fraunces, Georgia, serif;
+  letter-spacing: -.02em; margin-bottom: 20px;
+}
+.lede { font-size: 19px; color: var(--muted); max-width: 620px; }
+.lede strong { color: var(--text); font-weight: 500; }
+.cta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
+.btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 10px 18px; border-radius: 10px; font-weight: 500; font-size: 15px;
+  border: 1px solid var(--line); color: var(--text); background: var(--surface);
+}
+.btn:hover { text-decoration: none; border-color: var(--accent); }
+.btn.primary { background: var(--accent); border-color: var(--accent); color: var(--bg); }
+.btn.primary:hover { filter: brightness(1.08); }
+.btn svg { width: 17px; height: 17px; }
+
+/* Sections */
+section { padding: 56px 0; border-top: 1px solid var(--line); }
+h2 {
+  font: 500 13px 'JetBrains Mono', monospace; text-transform: uppercase;
+  letter-spacing: .08em; color: var(--muted); margin-bottom: 28px;
+}
+h3 { font-size: 17px; font-weight: 600; line-height: 1.35; }
+.meta { font-size: 14px; color: var(--muted); }
+
+/* About */
+.about-grid { display: grid; grid-template-columns: 1.6fr 1fr; gap: 40px; }
+.about-grid p + p { margin-top: 14px; }
+.facts { list-style: none; font-size: 15px; }
+.facts li { padding: 10px 0; border-bottom: 1px solid var(--line); display: flex; justify-content: space-between; gap: 12px; }
+.facts li:first-child { padding-top: 0; }
+.facts span:first-child { color: var(--muted); }
+.facts span:last-child { text-align: right; font-weight: 500; }
+@media (max-width: 700px) { .about-grid { grid-template-columns: 1fr; gap: 28px; } }
+
+/* Timeline */
+.item { display: grid; grid-template-columns: 150px 1fr; gap: 24px; padding: 22px 0; }
+.item + .item { border-top: 1px dashed var(--line); }
+.item .when { font: 400 13px/1.6 'JetBrains Mono', monospace; color: var(--muted); padding-top: 3px; }
+.item .org { color: var(--accent); font-weight: 500; font-size: 15px; margin-top: 2px; }
+.item ul { margin-top: 10px; padding-left: 18px; color: var(--muted); }
+.item li { margin-top: 6px; }
+.item li::marker { color: var(--accent); }
+.badge {
+  display: inline-block; font: 500 11px 'JetBrains Mono', monospace; text-transform: uppercase;
+  letter-spacing: .05em; padding: 3px 8px; border-radius: 6px;
+  background: var(--accent-soft); color: var(--accent); margin-left: 8px; vertical-align: 2px;
+}
+@media (max-width: 600px) { .item { grid-template-columns: 1fr; gap: 6px; } }
+
+/* Cards */
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 16px; }
+.card {
+  background: var(--surface); border: 1px solid var(--line); border-radius: 14px;
+  padding: 22px; box-shadow: var(--shadow); display: flex; flex-direction: column;
+}
+.card p { color: var(--muted); font-size: 15px; margin-top: 8px; flex: 1; }
+.card .kicker { font: 500 12px 'JetBrains Mono', monospace; color: var(--accent); margin-bottom: 8px; }
+.tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 16px; }
+.tag {
+  font: 400 12px 'JetBrains Mono', monospace; padding: 3px 9px; border-radius: 999px;
+  border: 1px solid var(--line); color: var(--muted);
+}
+
+/* Skills */
+.skills { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 28px; }
+.skills h3 { font-size: 15px; margin-bottom: 12px; }
+
+/* Contact */
+.contact { text-align: center; padding: 72px 0 88px; }
+.contact h2 { margin-bottom: 14px; }
+.contact .big { font: 600 clamp(28px, 5vw, 40px)/1.15 Fraunces, Georgia, serif; margin-bottom: 14px; }
+.contact p { color: var(--muted); max-width: 520px; margin: 0 auto; }
+.contact .cta { justify-content: center; }
+
+footer { border-top: 1px solid var(--line); padding: 24px 0; font-size: 13px; color: var(--muted); text-align: center; }
+
+@media (prefers-reduced-motion: no-preference) {
+  .reveal { opacity: 0; transform: translateY(12px); transition: opacity .6s ease, transform .6s ease; }
+  .reveal.in { opacity: 1; transform: none; }
+}
+@media print {
+  nav, .theme-btn, .cta { display: none; }
+  .reveal { opacity: 1 !important; transform: none !important; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="brand" href="#top">Nischal Shrestha</a>
+    <div class="nav-links">
+      <a href="#about" class="hide-sm">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects" class="hide-sm">Projects</a>
+      <a href="#contact">Contact</a>
+      <button class="theme-btn" id="themeBtn" aria-label="Toggle dark mode">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<main id="top">
+  <header class="hero wrap">
+    <p class="eyebrow">Computer Science · Lakehead University</p>
+    <h1>Nischal Shrestha</h1>
+    <p class="lede">
+      Computer Science student and <strong>undergraduate AI researcher</strong> working on
+      hyperspectral image analysis with deep learning. I've also worked in software development
+      and IT support, and I currently lead a team as a store supervisor.
+    </p>
+    <div class="cta">
+      <a class="btn primary" href="mailto:nshrest2@lakeheadu.ca">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+        Email me
+      </a>
+      <a class="btn" href="https://www.linkedin.com/in/snischal044" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+        LinkedIn
+      </a>
+    </div>
+  </header>
+
+  <section id="about" class="reveal">
+    <div class="wrap">
+      <h2>About</h2>
+      <div class="about-grid">
+        <div>
+          <p>
+            I'm an Honours BSc Computer Science student at Lakehead University in Thunder Bay, Ontario,
+            and I'm on the Dean's List. My main interests are machine learning and computer vision.
+            Right now I'm on a faculty-led research project that applies deep learning to hyperspectral images.
+          </p>
+          <p>
+            Before university, I spent more than two years as a software development and IT intern in Kathmandu,
+            writing and testing code and handling hardware, network and system support. That work taught me to explain
+            technical problems clearly to people who aren't technical, and to write documentation others can rely on.
+          </p>
+        </div>
+        <ul class="facts">
+          <li><span>Based in</span><span>Thunder Bay, ON</span></li>
+          <li><span>Degree</span><span>Hons. BSc CS, 2028</span></li>
+          <li><span>Average</span><span>80 / 100</span></li>
+          <li><span>Standing</span><span>Dean's List</span></li>
+          <li><span>Open to</span><span>Co-op &amp; internships</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience" class="reveal">
+    <div class="wrap">
+      <h2>Experience</h2>
+
+      <div class="item">
+        <div class="when">Aug 2026 – Present</div>
+        <div>
+          <h3>Undergraduate AI Researcher <span class="badge">Research</span></h3>
+          <div class="org">Lakehead University</div>
+          <ul>
+            <li>Help with a faculty-led research project on hyperspectral image analysis.</li>
+            <li>Prepare, clean and query datasets with Python and SQL; implement and test deep learning models.</li>
+            <li>Review relevant literature and write up methodology and results in structured reports for the research team.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="when">Sep 2024 – Present</div>
+        <div>
+          <h3>Store Supervisor</h3>
+          <div class="org">Burger King · Thunder Bay, ON</div>
+          <ul>
+            <li>Coordinate daily store operations and lead a team: prioritizing, delegating and communicating across the team.</li>
+            <li>Keep accurate records and reports, including cash reconciliation and shift reporting.</li>
+            <li>Solve problems in real time under pressure while studying full-time.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="when">Jan 2022 – Jul 2024</div>
+        <div>
+          <h3>Software Development &amp; IT Intern</h3>
+          <div class="org">Coding Mountain · Kathmandu, Nepal</div>
+          <ul>
+            <li>Worked on software and web development projects, writing and testing code to assigned requirements.</li>
+            <li>Provided IT support: hardware setup, troubleshooting network and system issues, and system maintenance.</li>
+            <li>Explained technical findings as clear guidance for non-technical stakeholders; managed several projects at once on my own.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" class="reveal">
+    <div class="wrap">
+      <h2>Projects &amp; Research</h2>
+      <div class="cards">
+        <article class="card">
+          <div class="kicker">Research · 2026–</div>
+          <h3>Hyperspectral Image Analysis</h3>
+          <p>
+            Deep learning for hyperspectral imagery, which records hundreds of spectral bands per pixel.
+            My work covers dataset preparation, model implementation and testing, and documenting results for the team.
+          </p>
+          <div class="tags"><span class="tag">Python</span><span class="tag">Deep Learning</span><span class="tag">Computer Vision</span><span class="tag">SQL</span></div>
+        </article>
+        <article class="card">
+          <div class="kicker">Hackathon · 12-hour build</div>
+          <h3>Game Development</h3>
+          <p>
+            Our team designed, coded and tested a working game in 12 hours. We split up the work,
+            prototyped quickly and fixed problems as they came up to finish a complete game by the deadline.
+          </p>
+          <div class="tags"><span class="tag">Rapid Prototyping</span><span class="tag">Teamwork</span></div>
+        </article>
+        <article class="card">
+          <div class="kicker">Harvard University · 2025</div>
+          <h3>CS50: Introduction to Computer Science</h3>
+          <p>
+            Harvard's introductory CS course, covering algorithms, data structures, memory, web basics
+            and databases, with problem sets in C, Python and SQL.
+          </p>
+          <div class="tags"><span class="tag">C</span><span class="tag">Python</span><span class="tag">SQL</span></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills" class="reveal">
+    <div class="wrap">
+      <h2>Skills</h2>
+      <div class="skills">
+        <div>
+          <h3>Languages</h3>
+          <div class="tags"><span class="tag">Python</span><span class="tag">Java</span><span class="tag">C</span><span class="tag">SQL</span></div>
+        </div>
+        <div>
+          <h3>Machine Learning</h3>
+          <div class="tags"><span class="tag">Deep Learning</span><span class="tag">Computer Vision</span><span class="tag">PyTorch / TensorFlow (learning)</span><span class="tag">Data Preparation</span></div>
+        </div>
+        <div>
+          <h3>Foundations</h3>
+          <div class="tags"><span class="tag">Data Structures</span><span class="tag">OOP</span><span class="tag">Algorithms</span><span class="tag">Databases</span><span class="tag">Computer Architecture</span></div>
+        </div>
+        <div>
+          <h3>IT &amp; Tools</h3>
+          <div class="tags"><span class="tag">Hardware &amp; Networking</span><span class="tag">Troubleshooting</span><span class="tag">MS Office</span><span class="tag">Technical Writing</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="education" class="reveal">
+    <div class="wrap">
+      <h2>Education &amp; Certifications</h2>
+      <div class="item">
+        <div class="when">Expected 2028</div>
+        <div>
+          <h3>Honours Bachelor of Science, Computer Science</h3>
+          <div class="org">Lakehead University · Thunder Bay, ON</div>
+          <ul>
+            <li>Grade average 80/100, Dean's List.</li>
+            <li>Coursework: Data Structures, Object-Oriented Programming, Computer Architecture, Calculus.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="item">
+        <div class="when">2025</div>
+        <div>
+          <h3>CS50: Introduction to Computer Science</h3>
+          <div class="org">Harvard University</div>
+        </div>
+      </div>
+      <div class="item">
+        <div class="when">2020</div>
+        <div>
+          <h3>Computer Hardware and Networking</h3>
+          <div class="org">Certificate training</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact reveal">
+    <div class="wrap">
+      <h2>Contact</h2>
+      <p class="big">Let's talk.</p>
+      <p>I'm looking for co-op and internship roles in software, IT or research. The best way to reach me is by email.</p>
+      <div class="cta">
+        <a class="btn primary" href="mailto:nshrest2@lakeheadu.ca">nshrest2@lakeheadu.ca</a>
+        <a class="btn" href="tel:+18077076979">(807) 707-6979</a>
+        <a class="btn" href="https://www.linkedin.com/in/snischal044" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">© <span id="yr">2026</span> Nischal Shrestha · Thunder Bay, Ontario</div>
+</footer>
+
+<script>
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  const root = document.documentElement;
+  try { const t = localStorage.getItem('theme'); if (t) root.dataset.theme = t; } catch (e) {}
+  document.getElementById('themeBtn').addEventListener('click', () => {
+    const cur = root.dataset.theme || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    const next = cur === 'dark' ? 'light' : 'dark';
+    root.dataset.theme = next;
+    try { localStorage.setItem('theme', next); } catch (e) {}
+  });
+
+  const io = new IntersectionObserver(entries => entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+  }), { threshold: 0.08 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+</body>
+</html>
